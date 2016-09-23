@@ -1,0 +1,17 @@
+{
+  "name": "bootstrapped-list",
+  "description": "",
+  "main": "",
+  "authors": [
+    "sirarslaan <arhamoja@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/golpe-de-remo/prework-bootstrap",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
