@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 //import 'bootstrap/dist/css/bootstrap-material-design-min.css';
-import './bootstrap-material-design/dist/css/bootstrap-material-design.css'
+import 'bootstrap-material-design/dist/css/bootstrap-material-design.css'
+
 
 
 
@@ -28,11 +29,11 @@ var PaddleList = React.createClass({
 var PaddleButton = React.createClass({
 	render: function() {
 		return(
-			<p class="bs-component">
+			<p className="bs-component">
 
-				<a class="btn btn-raised btn-primary" href="javascript:void(0)" onClick={this.props.onClick}>
+				<a className="btn btn-raised btn-primary" href="javascript:void(0)" onClick={this.props.onClick}>
 					Paddlin
-					<div class="ripple-container"></div>
+					<div className="ripple-container"></div>
 				</a>
 			</p>
 			)
