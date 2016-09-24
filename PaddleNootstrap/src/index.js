@@ -1,14 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
+//import 'bootstrap/dist/js/bootstrap.js';
 //import 'bootstrap/dist/css/bootstrap-material-design-min.css';
 import 'bootstrap-material-design/dist/css/bootstrap-material-design.css'
+//import 'bootstrap-material-design/dist/js/material.js'
 
 
 
 
-var PaddleGuys = ["Arslan", "Juan", "Lluc"]
+var PaddleGuys = ["Arslan", "Juan", "Lluc", "Maria"]
 //var PaddledGuys = []
 
 var PaddleList = React.createClass({
@@ -42,7 +43,7 @@ var PaddleButton = React.createClass({
 
 var PaddleBox = React.createClass({
 	render: function(){
-		return <textarea value={this.props.guy}></textarea>
+		return <p className="text-danger">{this.props.guy}</p>
 	}
 });
 
@@ -56,7 +57,8 @@ var Paddler = React.createClass({
 	paddleClick: function(event) {
 		var randomPaddle = Math.floor(Math.random() * PaddleGuys.length);
 		var guy = this.props.guys[randomPaddle];
-		this.setState({paddledGuy: guy});
+		console.log("Hola!");
+		this.setState({paddlinGoesTo: guy});
 
 
 
@@ -64,10 +66,27 @@ var Paddler = React.createClass({
 
 	render: function(){
 		return(
-			<div class="container">
-				<p class="text-primary"><PaddleList guys={this.props.guys} /></p><br></br>
-				<PaddleButton onClick={this.paddleClick}/><br></br><br></br><br></br>
-				<PaddleBox guy={this.state.paddledGuy}/>
+			<div className="container">
+				<div className="panel panel-warning">
+					<div className="panel-heading">
+						<h3 className="panel-title">Candidates</h3>
+					</div>
+					<div className="panel-body">
+    					<PaddleList guys={this.props.guys} />
+  					</div>
+				</div>
+				<p className="text-primary"></p>
+				<br></br>
+				<PaddleButton onClick={this.paddleClick}/>
+				<a className="btn btn-raised btn-primary" href="javascript:void(0)">
+					Paddlin2
+					<div className="ripple-container"></div>
+				</a>
+
+				<br></br><br></br><br></br>
+				<div className="well well-lg"> 
+					<PaddleBox guy={this.state.paddlinGoesTo}/>
+				</div>
 			</div>
 		)
 	}
